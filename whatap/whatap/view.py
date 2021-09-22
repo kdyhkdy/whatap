@@ -5,6 +5,9 @@ import time
 
 def testAPI(request):
 
-    return JsonResponse({"data":"test","mes": "res"},json_dumps_params={'ensure_ascii': True})
+    return JsonResponse(
+        {"data":"test","mes": "res"}
+        ,json_dumps_params={'ensure_ascii': True}
+    )
 
 

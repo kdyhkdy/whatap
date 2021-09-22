@@ -8,21 +8,17 @@ class ResponseFormattingMiddleware:
     METHOD = ('GET', 'POST', 'PUT', 'PATCH', 'DELETE')
     def __init__(self,get_response):
         self.get_response = get_response
-        print('middle ware init')
 
     def __call__(self, request):
-        # print('middle ware before response (before to call view)')
         start_time = time.time()
         response = self.get_response(request)
 
         if hasattr(self, 'process_response'):
             response = self.process_response(request, response)
 
-        # print('middle ware after response (after to call view)')
         response.data.iloc[-1,7]= round((time.time() - start_time)*1000, 4)
-        print('latency info ===================== ')
         response.data.to_csv(response.file_name, index=False)
-        print(response.data)
+
         return response
 
 
