@@ -47,10 +47,6 @@ class ResponseFormattingMiddleware:
         request_info['MEM_USAGE'] = float(mem_usage)
         request_info['LATENCY'] = None
 
-        # inner_end_time = time.time() - inner_start_time
-
-        # print (round(inner_end_time*1000,4) , ' msec inner' )
-
         req_arr = np.array(
             [[
                 request_info.get('TIMESTAMP'),
