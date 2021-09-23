@@ -47,7 +47,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whatap.middleware.ResponseFormattingMiddleware',
+    'whatap.middleware.ResponseMonitoringMiddleware',
 ]
 
 ROOT_URLCONF = 'whatap.urls'
