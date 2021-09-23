@@ -4,7 +4,8 @@ import subprocess
 import pandas as pd
 import numpy as np
 
-class ResponseFormattingMiddleware:
+
+class ResponseMonitoringMiddleware:
     METHOD = ('GET', 'POST', 'PUT', 'PATCH', 'DELETE')
     def __init__(self,get_response):
         self.get_response = get_response
