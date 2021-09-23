@@ -16,8 +16,8 @@ class ResponseMonitoringMiddleware:
         if hasattr(self, 'process_response'):
             response = self.process_response(request, response)
 
-        response.data.iloc[-1,7]= round((time.time() - start_time)*1000, 4)
-        response.data.to_csv(response.file_name, index=False)
+            response.data.iloc[-1,7]= round((time.time() - start_time)*1000, 4)
+            response.data.to_csv(response.file_name, index=False)
 
         return response
 
