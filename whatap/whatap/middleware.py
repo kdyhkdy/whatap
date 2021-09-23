@@ -6,7 +6,6 @@ import numpy as np
 
 
 class ResponseMonitoringMiddleware:
-    METHOD = ('GET', 'POST', 'PUT', 'PATCH', 'DELETE')
     def __init__(self,get_response):
         self.get_response = get_response
 
